@@ -72,10 +72,12 @@ ${content}
         return res.status(500).json({ error: 'Groq API failed' });
       }
 
-      const result = await gptRes.json();
-      const output = result.choices?.[0]?.message?.content || '';
+const result = await gptRes.json();
+const output = result.choices?.[0]?.message?.content || '';
 
-      const jsonBlock = output.match(/\{[\s\S]*\}/)?.[0];
+console.log('🧠 Raw GPT Output:', output); // <-- ADD THIS
+
+const jsonBlock = output.match(/\{[\s\S]*\}/)?.[0];
       if (!jsonBlock) throw new Error('No valid JSON found in GPT response');
 
       const parsed = JSON.parse(jsonBlock);
