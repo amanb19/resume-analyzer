@@ -42,6 +42,15 @@ export default function Home() {
         <h1 className="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-2">
           📄 AI Resume Analyzer
         </h1>
+        <div className="mb-4">
+          <a
+            href="/sample_resume.docx"
+            download
+            className="block text-center bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all"
+          >
+            📄 Download Sample Resume (.docx)
+          </a>
+        </div>
 
         <label
           htmlFor="file-upload"
